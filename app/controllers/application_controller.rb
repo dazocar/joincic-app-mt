@@ -25,4 +25,14 @@ class ApplicationController < ActionController::Base
     return data
   end
 
+  def get_active_students(country_id)
+    url = "http://localhost:4000/<TO DO>"
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Get.new(uri.request_uri)
+    response = http.request(request)
+    data = JSON.parse(response.body)
+    return data
+  end
+
 end

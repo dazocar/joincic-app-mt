@@ -23,4 +23,21 @@ class JoincicsController < ApplicationController
       @students << Person.new(student_data.slice('first_name', 'last_name', 'email'))
     end
   end
+
+  def show_active_students
+    country_id = params[:id]
+    case country_id.to_i
+    when 138
+      @country_name = "Perú"
+    when 186
+      @country_name = "USA"
+    when 191
+      @country_name = "Venezuela"
+    end
+
+    @students = []
+
+    # TO DO
+
+  end
 end

@@ -7,6 +7,7 @@ JoincicAppMt::Application.routes.draw do
 
   resources :joincics, only: [] do
     get 'show_schools', on: :collection
+    get 'show_active_students', on: :member
     get 'show_school_students', on: :member
   end
 
