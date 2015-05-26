@@ -1,0 +1,20 @@
+%h1 Joincics#show_schools
+
+%table
+  %thead
+    %tr
+      %th{ style: "width: 100px"}
+        = "Name"
+      %th{ style: "width: 100px"}
+        = "Code"
+      %th{ style: "width: 100px"}
+        = "Private"
+  %tbody
+    - @schools.each do |school|
+      %tr
+        %td
+          = link_to school.name, show_school_students_joincic_path(school.id)
+        %td
+          = school.code
+        %td
+          = school.is_private
